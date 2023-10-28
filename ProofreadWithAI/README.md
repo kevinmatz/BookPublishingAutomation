@@ -11,6 +11,9 @@
 
 * `python -m pip install -r requirements.txt` to install prerequisite packages
 
+* I got a `ModuleNotFoundError: No module named 'pkg_resources'` error when running the program; according to https://stackoverflow.com/questions/7446187/no-module-named-pkg-resources it may be due to a broken `setuptools` install
+  * Problem was resolved by running (in the conda environment): `pip install --upgrade setuptools`
+  
 * Run (in ProofreadWithAI folder):
   * `python ProofreadWithAI.py TestDataInputs/CorporateCultureTermPaper.docx output.docx`
 
