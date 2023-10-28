@@ -48,20 +48,20 @@ for segment in segments:
     print(segment)
     print("-----")
 
+    """
+        prompt = prompt_format.format(segment)
+        response = openai.Completion.create(
+        engine="text-davinci-003",
+        prompt=prompt,
+        temperature=0.5,
+        max_tokens=2100
+        )
+        # Save the corrected text
+        proofread_segments.append(response.choices[0].text.strip())
+    """
+
     # For now, until we can get openai package working, just keep the segment unchanged
     proofread_segments.append(segment)
-
-"""
-    prompt = prompt_format.format(segment)
-    response = openai.Completion.create(
-      engine="text-davinci-003",
-      prompt=prompt,
-      temperature=0.5,
-      max_tokens=2100
-    )
-    # Save the corrected text
-    proofread_segments.append(response.choices[0].text.strip())
-"""
 
 # print("segments_count: ", segments_count)
 
@@ -70,7 +70,7 @@ proofread_md = ''.join(proofread_segments)
 
 # Write the proofread markdown to a file
 # TODO: How to generate a temp filename properly in Python? And can it be auto-deleted at program termination like in Java?
-with open('temp_proofread.md', 'w') as file:
+with open('temp_proofread.md', 'w', encoding='utf-8') as file:
     file.write(proofread_md)
 
 # using pandoc to convert the markdown back to word document.
