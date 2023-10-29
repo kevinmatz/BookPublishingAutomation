@@ -1,0 +1,7 @@
+# requirements.txt
+
+# We will need markdown to parse the markdown files
+markdown==3.3.4
+
+# We will need pylatex to generate the latex files
+pylatex==1.4.1
